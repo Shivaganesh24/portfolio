@@ -1,0 +1,100 @@
+// mobile menu
+const nav = document.querySelector('.navbar');
+document.querySelector('.menu-btn').addEventListener('click', () => {
+  nav.classList.toggle('open');
+});
+
+// ======= Anime.js animations =======
+
+// 1) Hero intro timeline
+function runHeroAnimation() {
+  const tl = anime.timeline({ easing: 'easeOutExpo', duration: 750 });
+
+  tl.add({
+    targets: '.hero-title',
+    translateY: [24, 0],
+    opacity: [0, 1]
+  })
+  .add({
+    targets: '.hero-sub',
+    translateY: [20, 0],
+    opacity: [0, 1]
+  }, '-=400')
+  .add({
+    targets: '.hero-tag',
+    translateY: [16, 0],
+    opacity: [0, 1]
+  }, '-=450')
+  .add({
+    targets: '.hero-actions .btn',
+    opacity: [0, 1],
+    translateY: [16, 0],
+    delay: anime.stagger(80)
+  }, '-=400')
+  .add({
+    targets: '.socials a',
+    opacity: [0, 1],
+    translateY: [14, 0],
+    delay: anime.stagger(60)
+  }, '-=450');
+
+  // subtle breathing on ink edges
+  anime({
+    targets: ['.ink-top', '.ink-bottom'],
+    opacity: [{ value: .9, duration: 2200 }, { value: .8, duration: 2200 }],
+    easing: 'easeInOutSine',
+    direction: 'alternate',
+    loop: true
+  });
+}
+runHeroAnimation();
+
+// 2) Scroll reveal for any [data-sr]
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      anime({
+        targets: entry.target,
+        opacity: [0, 1],
+        translateY: [18, 0],
+        duration: 650,
+        easing: 'easeOutCubic'
+      });
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.18 });
+
+document.querySelectorAll('[data-sr]').forEach(el => io.observe(el));
+
+// 3) Fancy hover lift for project cards (springy)
+document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+  let anim;
+  card.addEventListener('mouseenter', () => {
+    anim = anime({
+      targets: card,
+      translateY: -6,
+      duration: 250,
+      easing: 'easeOutQuad'
+    });
+  });
+  card.addEventListener('mouseleave', () => {
+    if (anim) anim.pause();
+    anime({
+      targets: card,
+      translateY: 0,
+      duration: 300,
+      easing: 'easeOutQuad'
+    });
+  });
+});
+
+// 4) Smooth scroll for nav links
+document.querySelectorAll('.nav-item').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    nav.classList.remove('open');
+    document.querySelector(a.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});

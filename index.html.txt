@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiva Ganesh SR | Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <nav class="navbar container">
+      <div class="logo" data-sr>SG</div>
+      <button class="menu-btn" aria-label="Open Menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#about" class="nav-item">About Me</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#contact" class="nav-item">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="ink ink-top"></div>
+    <div class="ink ink-bottom"></div>
+
+    <div class="container hero-inner">
+      <h1 class="hero-title">SHIVA GANESH SR</h1>
+      <h3 class="hero-sub">AI/ML Engineer | Frontend & Backend Developer</h3>
+      <p class="hero-tag">I create smart, scalable web solutions with AI & IoT.</p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="resume.pdf" class="btn btn-ghost">Download Resume</a>
+      </div>
+
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title" data-sr>ABOUT</h2>
+      <div class="about-grid">
+        <div class="about-text" data-sr>
+          <p>Hi, I’m <strong>Shiva Ganesh SR</strong> 👋</p>
+          <p>
+            I’m a passionate and curious learner, currently pursuing B.Tech in Artificial Intelligence & Machine Learning.
+            I enjoy designing simple, interactive, and efficient solutions using AI and full-stack development.
+          </p>
+          <h3>MY CORE SKILLS INCLUDE:</h3>
+          <ul>
+            <li>Frontend Development: HTML, CSS, JavaScript</li>
+            <li>Python & Databases</li>
+            <li>AI/ML Integrations</li>
+          </ul>
+        </div>
+
+        <div class="skills-wrap" id="skills" data-sr>
+          <h3 class="skills-title">SKILLS</h3>
+          <div class="skill-grid">
+            <div class="skill-card"><i class="fab fa-html5"></i><p>HTML</p></div>
+            <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+            <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p></div>
+            <div class="skill-card"><span class="mono">C</span></div>
+            <div class="skill-card"><i class="fab fa-python"></i><p>Python</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-sr>MY PROJECTS</h2>
+
+      <article class="project-card" data-sr>
+        <h3>🩺 Medical Triage Assistant</h3>
+        <p>An AI assistant that analyzes symptoms and medical images to suggest likely conditions and next steps.</p>
+        <div class="proj-links">
+          <a href="#" class="link">GitHub</a>
+          <a href="#" class="link">Live Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card" data-sr>
+        <h3>💻 Auction Website</h3>
+        <p>A modern auction platform with real-time bidding, authentication, and admin dashboards.</p>
+        <div class="proj-links">
+          <a href="#" class="link">GitHub</a>
+          <a href="#" class="link">Live Demo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container" data-sr>
+      <h2 class="section-title light">Contact Me</h2>
+      <p>Let’s connect and build something amazing!</p>
+      <p>Email: <a href="mailto:shivaganesh@example.com" class="link">shivaganesh@example.com</a></p>
+    </div>
+  </section>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
